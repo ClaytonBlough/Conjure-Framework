@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Weapon Data", menuName = "Weapon Data/Ranged Weapon")]
+[CreateAssetMenu(fileName = "New Range Weapon Data", menuName = "Item Data/Ranged Weapon Data")]
 public class RangedWeaponData : WeaponData
 {
     public AmmunitionType ammunitionType = AmmunitionType.Handgun32;
@@ -13,8 +13,8 @@ public class RangedWeaponData : WeaponData
     public enum RecoilType { Gradual, Instant };
     public RecoilType recoilType = RecoilType.Gradual;
     public float accuracy = 3f;
-    public enum ReloadType { AllAtOnce, PerBullet };
-    public ReloadType reloadType = ReloadType.AllAtOnce;
+    public enum ReloadType { Magazine, OneAtATime };
+    public ReloadType reloadType = ReloadType.Magazine;
     public float reloadTime = 2f;
     public string chosenAmmoType;
 

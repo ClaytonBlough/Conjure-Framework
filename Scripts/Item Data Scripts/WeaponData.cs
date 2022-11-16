@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New  Weapon", menuName = "Item/Weapon")]
 public class WeaponData : ItemData
 {
     [Header("Weapon Stats")]
@@ -12,7 +11,7 @@ public class WeaponData : ItemData
     public GameObject weaponModel = null;
 
     [Header("Weapon Sounds")]
-    public AudioClip weaponEquipSound = null;
     public AudioClip weaponAttackSound = null;
-    public AudioClip weaponReloadSound = null;
+    public AudioClip weaponEquipSound = null;
+    public AudioClip weaponUnequipSound = null;
 }

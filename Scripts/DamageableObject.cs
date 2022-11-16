@@ -47,7 +47,7 @@ public class DamageableObject : MonoBehaviour
         if(debugMode)
         {
             Vector3 debugTextPosition = new Vector3(transform.position.x - 1f, transform.position.y + 2f, transform.position.z);
-            Handles.Label(debugTextPosition, "HP: " + currentHealth.ToString("N0"));
+            //Handles.Label(debugTextPosition, "HP: " + currentHealth.ToString("N0"));
         }
     }
 }

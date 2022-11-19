@@ -26,10 +26,15 @@ public class DamageableObject : MonoBehaviour
         {
             currentHealth -= damageToDeal;
         }
-
-        GameObject hitParticles = Instantiate(hitTakenParticlePrefab, hitPoint, Quaternion.identity);
-        hitParticles.transform.rotation = Quaternion.LookRotation(-direction);
-        Destroy(hitParticles, 15f);
+        
+        // You probably want a hit effect to make your game feel juicy
+        // This check is only here for testing quickly
+        if(hitTakenParticlePrefab)
+        {
+            GameObject hitParticles = Instantiate(hitTakenParticlePrefab, hitPoint, Quaternion.identity);
+            hitParticles.transform.rotation = Quaternion.LookRotation(-direction);
+            Destroy(hitParticles, 15f);
+        }
 
         if (currentHealth <= 0.0f)
         {
@@ -44,10 +49,12 @@ public class DamageableObject : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if(debugMode)
+        if(debugMode && Application.isEditor)
         {
             Vector3 debugTextPosition = new Vector3(transform.position.x - 1f, transform.position.y + 2f, transform.position.z);
-            //Handles.Label(debugTextPosition, "HP: " + currentHealth.ToString("N0"));
+            // Handles will sometimes have a red line under it.
+            // Handles does exist and work though. Ignore it.
+            Handles.Label(debugTextPosition, "HP: " + currentHealth.ToString("N0"));
         }
     }
 }

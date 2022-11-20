@@ -27,8 +27,8 @@ public class DamageableObject : MonoBehaviour
             currentHealth -= damageToDeal;
         }
         
-        // You probably want a hit effect to make your game feel juicy
-        // This check is only here for testing quickly
+        // You probably want a hit effect here to make your game feel juicy
+        // This check is only here for testing without a hit effect.
         if(hitTakenParticlePrefab)
         {
             GameObject hitParticles = Instantiate(hitTakenParticlePrefab, hitPoint, Quaternion.identity);
